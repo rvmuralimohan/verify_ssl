@@ -57,14 +57,14 @@ wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'xterm']) {
      {
       stringList.add[0]      
      }
-   
+   }
     catch (e) {
         echo e
         buildStatus = "UNSTABLE"
         break
     }
    
-  }
+  
   def bodyString = stringList.toString()
 
   echo 'bodyString' + bodyString
@@ -73,5 +73,6 @@ wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'xterm']) {
                         subject: "ATTENTION: SSL certificate expires within 30 days " + bodyString,
                         body: "" + bodyString
                 );
+}
 }
 }
