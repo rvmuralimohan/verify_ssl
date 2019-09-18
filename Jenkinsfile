@@ -6,8 +6,6 @@ import java.time.*
 import java.util.*
 
 node("master") {
-wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'xterm']) {
-  // cleanup old deployment files
   deleteDir()
  ;
   // load build functions into a subdirectory
@@ -75,4 +73,4 @@ wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'xterm']) {
                 );
 }
 }
-}
+
