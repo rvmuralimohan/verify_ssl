@@ -48,7 +48,7 @@ wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'xterm']) {
         returnStdout: true
       ).trim()
      
-echo 'expiryDateStr' + expiryDateStr
+  echo 'expiryDateStr' + expiryDateStr
 
  
  def currentDate = new Date().format("E MMM dd H:m:s z yyyy")
@@ -57,7 +57,7 @@ echo 'expiryDateStr' + expiryDateStr
      {
       stringList.add[0]      
      }
-     
+   
     catch (e) {
         echo e
         buildStatus = "UNSTABLE"
