@@ -26,27 +26,16 @@ node("master") {
 // sh ("true | openssl s_client -connect ebs-prd.corp.chartercom.com:443 2>/dev/null | openssl x509 -enddate -noout | awk -F[=G] '{print \$2}'")
   def endpoint
   def prt
-  def stringList = []
-  for (i =0; i < string.size(); i++)
-  {
+ def stringList = []
+    for ( i = 0; i < string.size(); i++)
+    {
      try {
-        endpoint = string[i].replace("https://", "")
-       
-        endpoint = endpoint.split("/")[0]
-       
-        prt = 443
-        if(endpoint.contains(":"))
-        {
-            prt = endpoint.split(":")[1]
-            endpoint = endpoint.split(":")[0]
-        }
-       
-      def expiryDateStr = sh (
-        script: "true | true | timeout 5 openssl s_client -servername ${sitename} -connect ${string[i]} 2>/dev/null | openssl x509 -noout -dates| awk -F[=G] '{print \$2}'|tail -1",
+        def sitename = string[i].split(":")[0]
+        def expiryDateStr = sh (
+        script: "true | timeout 5 openssl s_client -servername ${sitename} -connect ${string[i]} 2>/dev/null | openssl x509 -noout -dates| awk -F[=G] '{print \$2}'|tail -1",
         returnStdout: true
       ).trim()
-     
-  echo 'expiryDateStr' + expiryDateStr
+ echo 'expiryDateStr' + expiryDateStr
 
  
  def currentDate = new Date().format("E MMM dd H:m:s z yyyy")
