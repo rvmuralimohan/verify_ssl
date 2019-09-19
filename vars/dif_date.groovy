@@ -1,4 +1,4 @@
-public class  noOfDays(long date) { // This method will return no of days.
+public class  noOfDays(date) { // This method will return no of days.
       
         long days = 0;
  
