@@ -1,6 +1,6 @@
-def  call() { // This method will return no of days.
+def call(date) { // This method will return no of days.
        
-        long days = 0;
+        days = 0;
 
         try {
             if (date != 0) {
