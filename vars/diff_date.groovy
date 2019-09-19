@@ -1,4 +1,4 @@
-def  call(long date) { // This method will return no of days.
+def  call() { // This method will return no of days.
        
         long days = 0;
 
