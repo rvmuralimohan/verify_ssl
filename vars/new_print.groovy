@@ -1,3 +1,9 @@
+import groovy.time.TimeCategory
+import java.text.SimpleDateFormat
+import java.date.*
+import java.time.*
+import java.util.*
+
 public class Demo3 {
 
     public static void main(String[] args) {
