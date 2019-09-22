@@ -7,7 +7,7 @@ class Example {
         println daysBetween(lastWeek, today)
     }
 
-    static def daysBetween(def expiryDateStr, def newday) {
+    static def daysBetween(long expiryDateStr, long newday) {
         use(groovy.time.TimeCategory) {
            // def duration = expiryDateStr - newday
            long  duration = expiryDateStr - newday
