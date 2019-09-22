@@ -10,7 +10,7 @@ class Example {
     static def daysBetween(def expiryDateStr, def newday) {
         use(groovy.time.TimeCategory) {
            // def duration = expiryDateStr - newday
-           long def duration = expiryDateStr - newday
+           long  duration = expiryDateStr - newday
             return duration.days
         }
     }
