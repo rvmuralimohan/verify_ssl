@@ -9,7 +9,7 @@ def cfm = ComponentAccessor.customFieldManager
 def issueManager = ComponentAccessor.issueManager
 
 //def startDate = cfm.getCustomFieldObjectByName("Start Date CF Name")
-..#def endDate = cfm.getCustomFieldObjectByName("End Date CF Name")
+//def endDate = cfm.getCustomFieldObjectByName("End Date CF Name")
 //#def days = cfm.getCustomFieldObjectByName("Days")
 
 def issueStartDate = issue.getCustomFieldValue(startDate) as Date
