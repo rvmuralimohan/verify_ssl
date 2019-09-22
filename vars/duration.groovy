@@ -1,5 +1,5 @@
-import com.atlassian.jira.component.ComponentAccessor
-import com.atlassian.jira.event.type.EventDispatchOption
+//import com.atlassian.jira.component.ComponentAccessor
+//import com.atlassian.jira.event.type.EventDispatchOption
 
 def today = new Date()
 def startDate = today.format("MMM dd H:m:s yyyy")
