@@ -1,25 +1,16 @@
-//import com.atlassian.jira.component.ComponentAccessor
-//import com.atlassian.jira.event.type.EventDispatchOption
+class Example {
 
-def today = new Date()
-def startDate = today.format("MMM dd H:m:s yyyy")
-def endDate = expiryDateStr.format("MMM dd H:m:s yyyy")
+    public static void main(String[] args) {
+        def lastWeek = new Date() - 7;
+        def today = new Date()
 
-def cfm = ComponentAccessor.customFieldManager
-def issueManager = ComponentAccessor.issueManager
+        println daysBetween(lastWeek, today)
+    }
 
-//def startDate = cfm.getCustomFieldObjectByName("Start Date CF Name")
-//def endDate = cfm.getCustomFieldObjectByName("End Date CF Name")
-//#def days = cfm.getCustomFieldObjectByName("Days")
-
-def issueStartDate = issue.getCustomFieldValue(startDate) as Date
-def issueEndDate = issue.getCustomFieldValue(endDate) as Date
-
-def duration
-use(groovy.time.TimeCategory) {
-    duration = (issueEndDate - issueStartDate).days
+    static def daysBetween(def expiryDateStr, def newday) {
+        use(groovy.time.TimeCategory) {
+            def duration = expiryDateStr - newday
+            return duration.days
+        }
+    }
 }
-
-//issue.setCustomFieldValue(days,duration)
-//issueManager.updateIssue(ComponentAccessor.jiraAuthenticationContext.loggedInUser, issue, EventDispatchOption.DO_NOT_DISPATCH, false)
-
