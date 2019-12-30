@@ -1,3 +1,0 @@
-gmail.com:443
-yahoo.com:443
-axisbank.com:443
