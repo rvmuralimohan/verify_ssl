@@ -16,5 +16,10 @@ pipeline {
              echo "it is habee deploying"
          }
      }
+     stage ('push to artifactory'){
+         steps{
+             echo "pushging artifactory"
+         }
+     }
      }
 }
